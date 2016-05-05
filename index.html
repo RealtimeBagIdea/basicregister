@@ -1,0 +1,35 @@
+<html>
+<header>
+	<title>
+		Login Page
+	</title>
+</header>
+<body>
+
+	<style type="text/css">
+  		body{
+  			 	font-family : "Lucida Console";
+    			color: #cccccc;
+    			background-color: #333333; 
+    		}
+  	</style>
+
+  	<b>[Login]</b><br><br>
+
+	<form action="login.php" method="post">
+		Username: <input type="text" name="username"> <br> <br>
+		Password: <input type="password" name="password"> <br> <br>
+		<input type="submit" value="Login" style="width:100px">
+		<input type="button" onclick="gotoRegister()" value="Register" style="width:159px;">
+	</form>
+	
+
+	<script type="text/javascript">
+		function gotoRegister()
+		{
+			document.location.href = "http://localhost/simpleregister/register.html";
+		}
+	</script>
+</body>
+
+</html>

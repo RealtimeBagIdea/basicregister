@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Page</title>
+
+
+</head>
+<body>
+	<style type="text/css">
+  		body{
+  			 	font-family : "Lucida Console";
+    			color: #cccccc;
+    			background-color: #333333; 
+    		}
+  	</style>
+
+  	<b>[Register]</b><br><br>
+
+  	
+
+  	<form action="register.php" method="post" id="formregister" name="formregister" onsubmit="event.preventDefault();  checking(this)">
+  		Username: <input type="text" name="username"><br><br>
+  		Password: <input type="password" name="password"><br><br>
+  		&nbsp;&nbsp;E-mail: <input type="text" name="email"><br><br>
+  		<input type="submit" value="Comfirm">
+  		<input type="button" value="Cancel" onclick="BackPage()">
+  	</form>
+
+  	<script type="text/javascript">
+  		function BackPage()
+  		{
+  			document.location.href = "http://localhost/simpleregister/index.html";
+  		}
+
+		// add trim to older IEs
+		
+
+		function checking(forms) 
+		{ // onobtrusively adding the submit handler
+			if (!String.trim) 
+			{
+			  String.prototype.trim = function() {return this.replace(/^\s+|\s+$/g, "");};
+			}
+
+			var user = forms.username.value;
+			var pass = forms.password.value; // 'this' is the form 
+			var mail = forms.email.value;
+			if (user == null || user=="") 
+			{ 
+				alert('Please enter username');
+				forms.user.focus();
+				return false;
+			}
+			else if(pass == null || pass == "")
+			{
+				alert('Please enter password');
+				forms.password.focus();
+				return false; // cancel submission
+			}
+			else if(mail == null || mail == "")
+			{
+				alert('Please enter email');
+				forms.mail.focus();
+				return false; // cancel submission
+			}
+			document.forms['formregister'].submit();
+			return true; // allow submit
+		}
+	</script>
+</body>
+</html>
