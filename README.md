@@ -2,7 +2,7 @@
 
 [HTML]
 2 files of html are ui form
-- login.html
+- index.html
 - register.html
 
 [PHP]
